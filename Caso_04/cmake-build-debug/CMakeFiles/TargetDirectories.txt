@@ -1,0 +1,3 @@
+D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/cmake-build-debug/CMakeFiles/Caso_04.dir
+D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/cmake-build-debug/CMakeFiles/rebuild_cache.dir
