@@ -23,8 +23,8 @@ public:
 };
 
 
-Arista::Arista(Vertice * destino, int parrafo) {
-    destino = destino;
+Arista::Arista(Vertice * _destino, int parrafo) {
+    this->destino = _destino;
     poder = new PoderArista(parrafo);
 }
 

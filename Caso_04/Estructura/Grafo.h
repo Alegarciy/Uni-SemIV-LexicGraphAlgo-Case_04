@@ -49,21 +49,33 @@ void Grafo::agregarArista(std::string origen, std::string destino, int parrafo) 
 //No lo imprime en orden porque es un hashmap
 void Grafo::imprimir() {
     std::cout << "* Imprimiendo Grafo *" << std::endl;
-    std::unordered_map<std::string, Vertice*>::iterator it = this->getIndiceVertices()->begin();
-    for (it; it != this->getIndiceVertices()->end(); ++it) { //Recorre vertices en el grafo
-        std::cout <<"-"<<it->first << " Aristas (" << it->second->getPoder() <<")"<< std::endl;
-        std::unordered_map<std::string, Arista*>::iterator itArista = it->second->getAristas()->begin();
-        for (itArista; itArista != it->second->getAristas()->end(); ++itArista){ //Recorre las aristas en un vertice
-            std::cout << "   *"<< itArista->first << "  Poder (" <<itArista->second->getPoder()->getPoder() << ")";
-            std::vector<int>::iterator itParrafos = itArista->second->getPoder()->getParrafos()->begin();
+    Vertice * verticeActual = this->getPrimerVertice();
+
+    bool ultimaAristaFlag = false;
+    bool ultimoVerticeFlag = false;
+
+    while(!ultimoVerticeFlag){
+        std::cout <<"-"<<verticeActual->palabra << " Aristas (" << verticeActual->getPoder() <<")"<< std::endl;
+        Arista* aristaActual = verticeActual->getPrimerArista();
+        ultimaAristaFlag = false;
+        while(!ultimaAristaFlag){
+            std::cout << "   *" << aristaActual->getVerticeDestino()->palabra;
+            std::cout << "  Poder (" <<aristaActual->getPoder()->getPoder() << ")";
+            std::vector<int>::iterator itParrafos = aristaActual->getPoder()->getParrafos()->begin();
             std::cout << " Parrafos [";
-            for(itParrafos; itParrafos != itArista->second->getPoder()->getParrafos()->end(); ++itParrafos){ //Recorre los parrafos en una arista
-                std::cout <<  *itParrafos.base() << " ";
+            for (itParrafos; itParrafos != aristaActual->getPoder()->getParrafos()->end(); ++itParrafos) {
+                std::cout << *itParrafos.base() << " ";
             }
-            std::cout << "]" <<std::endl;
+            std::cout << "]" << std::endl;
+            if(aristaActual == verticeActual->ultimaArista) ultimaAristaFlag = true;
+            aristaActual = aristaActual->getSiguiente();
         }
+
+        if(verticeActual == ultimoVertice) ultimoVerticeFlag = true;
+        verticeActual = verticeActual->getSiguiente();
     }
 }
+
 
 bool Grafo::existeVertice(std::string palabra) {
     return indiceVertices->count(palabra) == 1;

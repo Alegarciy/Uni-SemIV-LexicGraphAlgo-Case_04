@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/Json/jsoncpp-master/dist/jsoncpp.cpp" "D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/cmake-build-debug/CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.obj"
-  "D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/main.cpp" "D:/Documentos/Analisis_de_Algoritmos/Practicas/Caso_04/cmake-build-debug/CMakeFiles/Caso_04.dir/main.cpp.obj"
+  "D:/Documentos/GitHub/Caso_04.2/Caso_04/Json/jsoncpp-master/dist/jsoncpp.cpp" "D:/Documentos/GitHub/Caso_04.2/Caso_04/cmake-build-debug/CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.obj"
+  "D:/Documentos/GitHub/Caso_04.2/Caso_04/main.cpp" "D:/Documentos/GitHub/Caso_04.2/Caso_04/cmake-build-debug/CMakeFiles/Caso_04.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

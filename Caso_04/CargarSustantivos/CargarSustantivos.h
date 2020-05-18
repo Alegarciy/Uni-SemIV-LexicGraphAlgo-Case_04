@@ -18,7 +18,7 @@ public:
     void cargarJson();
     void cargarGrafo();
     void OrdenarGrafo();
-    void OrdenarAristas(std::unordered_map<std::string, Arista*> * aristasMap);
+    void OrdenarAristas(Vertice * vertice);
 
 };
 
@@ -44,8 +44,8 @@ void CargarSustantivos::cargarGrafo() {
     //Recorre los parrafos
     bool primerRecorridoParrafo;
     Json::Value::iterator parrafoIt = this->data.begin();
-    //for(parrafoIt; parrafoIt != this->data.end(); ++parrafoIt){
-    for(parrafoIt; std::stoi(parrafoIt.key().asString()) < 2; ++parrafoIt){
+    for(parrafoIt; parrafoIt != this->data.end(); ++parrafoIt){
+    //for(parrafoIt; std::stoi(parrafoIt.key().asString()) < 2; ++parrafoIt){
         primerRecorridoParrafo = true;
         //Recorre las palabras
         Json::Value::iterator palabraIt = parrafoIt->begin();
@@ -56,7 +56,6 @@ void CargarSustantivos::cargarGrafo() {
             //Recorre las palabras a relacionar
             Json::Value::iterator relacionIt = parrafoIt->begin();
             for(relacionIt; relacionIt != parrafoIt->end(); ++relacionIt){
-
                 //Evita que se relacione a si misma
                 if(palabraIt.key() == relacionIt.key()) continue;
 
@@ -81,19 +80,19 @@ void CargarSustantivos::OrdenarGrafo() {
     std::copy(verticesMap->begin(), verticesMap->end(), std::back_inserter< std::vector<std::pair<std::string, Vertice*>>>(vec));
     //Ordena el vector con las parametros dentro del metodo (desc poder)
     std::sort(vec.begin(), vec.end(), [](const std::pair<std::string, Vertice*>& left, const std::pair<std::string, Vertice*>& right) {
-                  if (left.second->getPoder() != right.second->getPoder())
-                      return left.second->getPoder() > right.second->getPoder(); //Ordena con respecto al poder
+        if (left.second->getPoder() != right.second->getPoder())
+            return left.second->getPoder() > right.second->getPoder(); //Ordena con respecto al poder
 
-                  return left.first > right.first; //Ordena alfabeticamente
-              });
+        return left.first > right.first; //Ordena alfabeticamente
+    });
 
     grafo->setPrimerVertice(vec.begin()->second);
-    grafo->setUltimoVertice(vec.end()->second);
+    grafo->setUltimoVertice(vec.back().second);
     Vertice * anterior;
     // Recorre el vector con elemento actual
     // Apuntar a siguiente vector (desc poder)
     for (auto const &pair: vec) { // Es el gusano del espacio tiempo
-        OrdenarAristas(pair.second->getAristas());
+        OrdenarAristas(pair.second);
 
         if(pair.first != vec.begin()->first)
             anterior->setSiguiente(pair.second); // Intercambio de los dos tiempos
@@ -102,22 +101,26 @@ void CargarSustantivos::OrdenarGrafo() {
     }
 }
 
-void CargarSustantivos::OrdenarAristas(std::unordered_map<std::string, Arista *> *aristasMap) {
+void CargarSustantivos::OrdenarAristas(Vertice * vertice) {
 
     std::vector<std::pair<std::string, Arista*>> vec;
+    std::unordered_map<std::string, Arista*> * aristasMap = vertice->getAristas();
     //Copia hashmap [key,*arista] en un vector [key,*arista]
     std::copy(aristasMap->begin(), aristasMap->end(), std::back_inserter< std::vector<std::pair<std::string, Arista*>>>(vec));
     //Ordena el vector con las parametros dentro del metodo (desc poder)
     std::sort(vec.begin(), vec.end(),
               [](const std::pair<std::string, Arista*>& left, const std::pair<std::string, Arista*>& right) {
-                  if (left.second->getPoder() != right.second->getPoder())
-                      return left.second->getPoder() > right.second->getPoder();
-
-                  return left.first > right.first;
+                  if (left.second->getPoder()->getPoder() != right.second->getPoder()->getPoder())
+                      return left.second->getPoder()->getPoder() > right.second->getPoder()->getPoder();
+                  return left.first < right.first;
               });
 
 
+    vertice->primerArista = vec.begin()->second;
+    vertice->setMejorArista(vertice->primerArista);
+    vertice->ultimaArista = vec.back().second;
     Arista * anterior;
+
     // Recorre el vector con elemento actual
     // Apuntar a siguiente arista (desc poder)
     for (auto const &pair: vec) {

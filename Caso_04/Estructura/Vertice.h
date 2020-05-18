@@ -28,6 +28,7 @@ public:
     Vertice * getSiguiente();
     void setSiguiente(Vertice * vertice);
     Arista * getMejorArista();
+    Arista * getPrimerArista();
     void setMejorArista(Arista * arista);
     int getPoder();
     void agregarArista(Vertice* destino, int parrafo);
@@ -92,6 +93,10 @@ bool Vertice::HayRuta() {
 void Vertice::setRuta(bool _ruta)
 {
     ruta = _ruta;
+}
+
+Arista *Vertice::getPrimerArista() {
+    return primerArista;
 }
 
 #endif //CASO_04_VERTICE_H

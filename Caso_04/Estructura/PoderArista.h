@@ -11,7 +11,7 @@ private:
     //Numero de parrafo(s) al que la arista pertenece
     std::vector<int> * parrafos;
     //Cuantas veces se encuentra la relacion origen (vertice) -> destino (vertice)
-    int poder;
+    int poder = 0;
 public:
     PoderArista(int parrafo);
     int getPoder();
@@ -22,7 +22,7 @@ public:
 PoderArista::PoderArista(int parrafo) {
     parrafos = new std::vector<int>();
     parrafos->push_back(parrafo);
-    poder = 1;
+    this->poder = 1;
 }
 
 int PoderArista::getPoder() {
