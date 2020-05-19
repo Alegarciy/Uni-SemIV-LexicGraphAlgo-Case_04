@@ -112,7 +112,7 @@ void CargarSustantivos::OrdenarAristas(Vertice * vertice) {
               [](const std::pair<std::string, Arista*>& left, const std::pair<std::string, Arista*>& right) {
                   if (left.second->getPoder()->getPoder() != right.second->getPoder()->getPoder())
                       return left.second->getPoder()->getPoder() > right.second->getPoder()->getPoder();
-                  return left.first < right.first;
+                  return left.second->getPoder()->getPoder() > right.second->getPoder()->getPoder();
               });
 
 

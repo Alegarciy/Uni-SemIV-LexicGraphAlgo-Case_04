@@ -33,10 +33,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,28 +59,28 @@ include CMakeFiles/Caso_04.dir/flags.make
 CMakeFiles/Caso_04.dir/main.cpp.obj: CMakeFiles/Caso_04.dir/flags.make
 CMakeFiles/Caso_04.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documentos\GitHub\Caso_04.2\Caso_04\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Caso_04.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Caso_04.dir\main.cpp.obj -c D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Caso_04.dir\main.cpp.obj -c D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp
 
 CMakeFiles/Caso_04.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Caso_04.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp > CMakeFiles\Caso_04.dir\main.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp > CMakeFiles\Caso_04.dir\main.cpp.i
 
 CMakeFiles/Caso_04.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Caso_04.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp -o CMakeFiles\Caso_04.dir\main.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documentos\GitHub\Caso_04.2\Caso_04\main.cpp -o CMakeFiles\Caso_04.dir\main.cpp.s
 
 CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.obj: CMakeFiles/Caso_04.dir/flags.make
 CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.obj: ../Json/jsoncpp-master/dist/jsoncpp.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documentos\GitHub\Caso_04.2\Caso_04\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.obj -c D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.obj -c D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp
 
 CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp > CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp > CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.i
 
 CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Caso_04.dir/Json/jsoncpp-master/dist/jsoncpp.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp -o CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documentos\GitHub\Caso_04.2\Caso_04\Json\jsoncpp-master\dist\jsoncpp.cpp -o CMakeFiles\Caso_04.dir\Json\jsoncpp-master\dist\jsoncpp.cpp.s
 
 # Object files for target Caso_04
 Caso_04_OBJECTS = \

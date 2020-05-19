@@ -10,6 +10,6 @@
 int main() {
 
     Algoritmos * algoritmos = new Algoritmos();
-    //algoritmos->Agrupar(3,"curanderos");
+    algoritmos->Agrupar2(100,"curanderos");
     return 0;
 }

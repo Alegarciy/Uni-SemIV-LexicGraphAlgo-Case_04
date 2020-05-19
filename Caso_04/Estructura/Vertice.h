@@ -20,6 +20,7 @@ public:
     Vertice * siguiente;
     int poder;
     bool ruta;
+    bool leido;
 
 public:
     Vertice(std::string palabra);
@@ -41,6 +42,8 @@ Vertice::Vertice(std::string _palabra) {
     aristas = new std::unordered_map<std::string, Arista*>;
     palabra = _palabra;
     poder = 0;
+    ruta = true;
+    leido = false;
 }
 
 std::unordered_map<std::string, Arista *> * Vertice::getAristas() {
