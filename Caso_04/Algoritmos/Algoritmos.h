@@ -9,7 +9,7 @@
 #include "../CargarSustantivos/CargarSustantivos.h"
 
 class Algoritmos {
-private:
+public:
     Grafo * grafo;
 public:
     Algoritmos();
@@ -18,6 +18,9 @@ public:
     void AgruparRecursivo2(std::string palabra,std::string palabraInicial, int grupoActual, int cantidadDePalabras, std::unordered_map<std::string, int> *map);
 
     void Agrupar2(int cantidadGrupos, std::string palabraInicial);
+
+    void PalabrasMasPoderosas(int ctd);
+    void PalabrasRelacionadas(std::string palabra);
 };
 
 Algoritmos::Algoritmos() {
@@ -27,7 +30,7 @@ Algoritmos::Algoritmos() {
     cargar->cargarJson();
     cargar->cargarGrafo();
     cargar->OrdenarGrafo();
-    cargar->getGrafo()->imprimir();
+    //cargar->getGrafo()->imprimir();
 }
 
 std::unordered_map<std::string , std::string> *Algoritmos::Agrupar(int cantidadDeGrupos, std::string palabra) {
@@ -59,6 +62,17 @@ std::unordered_map<std::string , std::string> *Algoritmos::Agrupar(int cantidadD
     }
 
     return resultado;
+}
+
+// O(c)
+void Algoritmos::PalabrasMasPoderosas(int ctd) {
+    std::cout << " Las " << ctd << " palabras con mas poder" <<std::endl;
+    Vertice * vertice = grafo->getPrimerVertice();
+    for(int i = 1; i<=ctd; i++){
+        std::cout << i << ": " <<vertice->getPalabra() << " (" <<vertice->getPoder() <<") " <<std::endl;
+        if(vertice == grafo->getUltimoVertice()) break;
+        vertice = vertice->siguiente;
+    }
 }
 
 //Nota: no se pueden usar la palabra de inicio 2 veces, esta solo se llama en el for
@@ -163,6 +177,20 @@ void Algoritmos::AgruparRecursivo2(std::string palabra,std::string palabraInicia
 
     //Get la palabra de donde la arista actual apunta para continua en depth
     AgruparRecursivo2(aristaActual->getVerticeDestino()->palabra,palabraInicial,grupoActual ,cantidadDePalabras, map);
+}
+
+void Algoritmos::PalabrasRelacionadas(std::string palabra) {
+    std::cout << "Palabras con mayor poder relacionadas a " << palabra << std::endl;
+    Vertice* vertice = grafo->getIndiceVertices()->at(palabra);
+    Arista * arista = vertice->getPrimerArista();
+    int i = 1;
+    bool ultimaArista = false;
+    while(!ultimaArista){
+        std::cout << i << ": " << arista->getVerticeDestino()->getPalabra() << " (" << arista->getPoder()->getPoder() << ") " << std::endl;
+        if(arista == vertice->getUltimaArista()) ultimaArista = true;
+        arista = arista->getSiguiente();
+        i++;
+    }
 }
 
 #endif //CASO_04_ALGORITMOS_H

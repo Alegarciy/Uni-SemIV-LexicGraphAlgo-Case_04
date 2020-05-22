@@ -7,14 +7,14 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_SH=&quot;CMAKE_SH-NOTFOUND&quot;" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8e97bf1-2ce8-4228-a990-f1fe160aea08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algoritmos/Algoritmos.h" beforeDir="false" afterPath="$PROJECT_DIR$/Algoritmos/Algoritmos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargarSustantivos/CargarSustantivos.h" beforeDir="false" afterPath="$PROJECT_DIR$/CargarSustantivos/CargarSustantivos.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Estructura/Vertice.h" beforeDir="false" afterPath="$PROJECT_DIR$/Estructura/Vertice.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
@@ -72,11 +72,24 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documentos\Analisis_de_Algoritmos\Practicas\Caso_04" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Caso_04" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Caso_04" TARGET_NAME="Caso_04" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Caso_04" RUN_TARGET_NAME="Caso_04">

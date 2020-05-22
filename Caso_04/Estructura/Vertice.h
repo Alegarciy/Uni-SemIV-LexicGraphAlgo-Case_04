@@ -30,6 +30,7 @@ public:
     void setSiguiente(Vertice * vertice);
     Arista * getMejorArista();
     Arista * getPrimerArista();
+    Arista * getUltimaArista();
     void setMejorArista(Arista * arista);
     int getPoder();
     void agregarArista(Vertice* destino, int parrafo);
@@ -102,4 +103,7 @@ Arista *Vertice::getPrimerArista() {
     return primerArista;
 }
 
+Arista* Vertice::getUltimaArista() {
+    return ultimaArista;
+}
 #endif //CASO_04_VERTICE_H
